@@ -1,0 +1,43 @@
+Step-1 : Launch an Amazon Linux 2 EC2 Instance
+
+# yum update -y
+
+Step-2 : Install/Update AWS-CLI
+
+Upgrade the version of AWS-CLI
+
+# aws --version
+
+# curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+
+# unzip awscliv2.zip
+
+# which aws
+
+# ls -l /usr/local/bin/aws
+
+# sudo ./aws/install --bin-dir /usr/bin --install-dir /usr/bin/aws-cli --update
+
+# aws --version
+
+Generate the SSH keys from IAM User Credential and configure with access key and secret key
+
+# aws configure
+
+Step-3 : Install eksctl
+
+# curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
+
+# sudo mv /tmp/eksctl /usr/local/bin
+
+# eksctl version
+
+Step-4 : Install kubectl
+
+# curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.18.9/2020-11-02/bin/linux/amd64/kubectl
+
+# chmod +x ./kubectl
+
+# sudo mv ./kubectl /usr/local/bin
+
+# kubectl version --short --client
