@@ -1,0 +1,13 @@
+After writing the YAML File Execute below command
+
+# eksctl create cluster -f sample.yml
+
+Once Cluster is created Execute below commands to verify
+
+# eksctl get cluster
+
+# kubectl get nodes
+
+# eksctl get nodegroup --cluster <my-test>
+
+# eksctl scale nodegroup --cluster=<my-test> --nodes=3 --name=ng-1
