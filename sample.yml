@@ -1,0 +1,24 @@
+#sample YAML file for setting EKS Cluster
+
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: my-test
+  region: ap-south-1
+
+vpc:
+  id: "vpc-111111"
+  subnets:
+    public:
+      ap-south-1a:
+          id: "subnet-1111111"
+      ap-south-1b:
+          id: "subnet-1111111"
+
+nodeGroups:
+  - name: ng-1
+    instanceType: t2.micro
+    desiredCapacity: 2
+    ssh: # use existing EC2 key
+      publicKeyName: AWS_2020
